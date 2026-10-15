@@ -3,10 +3,22 @@
   "displayName": "Danzeira",
   "description": "Manage partner-dance events on Danzeira: create and publish events, ticket types, promo codes, check-ins, announcements, schedules, team and waitlists.",
   "version": "0.1.0",
-  "author": { "name": "Farzad Hayat", "email": "hello@danzeira.com" },
+  "author": {
+    "name": "Farzad Hayat",
+    "email": "hello@danzeira.com"
+  },
   "homepage": "https://danzeira.com",
   "repository": "https://github.com/FarzadHayat/danzeira-mcp",
   "license": "MIT",
-  "keywords": ["danzeira", "events", "ticketing", "dance", "mcp", "organizers"],
-  "logo": "assets/logo.png"
+  "keywords": [
+    "danzeira",
+    "events",
+    "ticketing",
+    "dance",
+    "mcp",
+    "organizers"
+  ],
+  "logo": "assets/logo.png",
+  "skills": "./skills/",
+  "rules": "./rules/"
 }

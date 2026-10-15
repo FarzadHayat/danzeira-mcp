@@ -29,6 +29,13 @@ Authentication is OAuth 2.1 with dynamic client registration. There are no API k
 
 Refunds and cancellations cannot be undone, so your assistant should confirm before running them.
 
+## Skills and rules
+
+The Cursor plugin also ships:
+
+- **Skill `create-danzeira-event`** (`skills/create-danzeira-event/SKILL.md`): walks your agent through a full event setup. It creates a draft with `events_create`, adds free or paid ticket types with `ticket_types_create`, optional promo codes and schedule sessions, makes it recurring with `dates_update` and `dates_add`, then reviews everything with you before `events_publish`.
+- **Rule `danzeira-safety`** (`rules/danzeira-safety.mdc`, always on): use the event's own time zone and currency, never invent prices or capacities, and confirm before publishing, cancelling, refunding, deleting, or messaging attendees.
+
 ## Connect in Cursor
 
 Install the Danzeira plugin from the Cursor marketplace, or add this to `~/.cursor/mcp.json`:

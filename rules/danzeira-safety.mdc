@@ -1,0 +1,20 @@
+---
+description: Safety and accuracy rules for managing events with the Danzeira MCP
+alwaysApply: true
+---
+
+# Danzeira event safety
+
+When using Danzeira MCP tools:
+
+- **Time zone:** Always use the event's own venue time zone. Event and session times are venue-local. Never assume or convert to your own, the server's, or the user's time zone. If it is unclear, check `events_show` or ask.
+- **Currency:** Prices are in the event's own currency. Never assume a currency or convert between currencies. If it is unclear, ask.
+- **Never invent numbers:** Do not make up prices, capacities, discounts, dates, times, or coordinates. If the organiser has not given a value, ask for it.
+- **Confirm first:** Before any of these, show the organiser exactly what will happen and wait for an explicit yes:
+  - Publishing: `events_publish`, `events_publish_series`
+  - Cancelling: `events_cancel`, `events_cancel_series`
+  - Refunding: `tickets_refund`, or `refund_tickets` on a cancel
+  - Deleting: `events_delete`, `events_delete_series`, `ticket_types_delete`, `promo_codes_delete`, `sessions_delete`
+  - Messaging attendees: `announcements_create`
+- Cancellations, refunds and deletions cannot be undone. Say so when asking for confirmation.
+- Pass an `idempotency_key` to `events_create` and `announcements_create` so a retry does not create a duplicate event or send a second email.
